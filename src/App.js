@@ -1,9 +1,26 @@
 import './App.css';
+import  { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/layout/Header';
+import Booker from './components/Booker';
+import About from './components/pages/About';
 
-function App() {
+const App = props=> {
   return (
-    <div className="App">
-      
+    <div className="container">
+      <Router>
+        <Header />
+        <Route exact path="/">
+          <Booker>
+
+          </Booker>
+        </Route>
+        <Route path="/top-five">
+          
+        </Route>
+        <Route path="/about">
+          <About/>
+        </Route>
+      </Router>
     </div>
   );
 }
