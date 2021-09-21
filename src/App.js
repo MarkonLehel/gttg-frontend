@@ -6,20 +6,22 @@ import About from './components/pages/About';
 
 const App = props=> {
   return (
-    <div className="container">
+    <div className="App">
       <Router>
         <Header />
-        <Route exact path="/">
-          <Booker>
-
-          </Booker>
-        </Route>
-        <Route path="/top-five">
-          
-        </Route>
-        <Route path="/about">
-          <About/>
-        </Route>
+        <div className="container">
+          <div id="content">
+            <Route exact path="/">
+              <Booker />
+            </Route>
+            <Route path="/top-five">
+              
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+          </div>
+        </div>
       </Router>
     </div>
   );
