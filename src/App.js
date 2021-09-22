@@ -10,11 +10,11 @@ const App = props=> {
   // const [isVisible, setIsVisible] = useState(false);
   const [items, setItems] = useState([]);
   const transition = useTransition(items, {
-    from: {x: -100, y: 800, opacity: 0},
+    from: {x: -100, y: 600, opacity: 0},
     enter: item => (next) => ( // change enter from object to a callback
       next({x: 0, y: item.y, opacity: 1, delay: item.delay})
     ),
-    leave: {x: 100, y: 800, opacity: 0},
+    leave: {x: 100, y: 600, opacity: 0},
 
   });
   return (
@@ -39,8 +39,8 @@ const App = props=> {
       <button onClick={() => {
         setItems(v => v.length ? [] : [
           {y: -100, delay: 200},
-          {y: 0, delay: 200},
-          {y: 100, delay: 200},
+          {y: 0, delay: 400},
+          {y: 100, delay: 600},
         ]);
       }}>{items.length ? 'unmount' : 'mount'}</button>
       <div className="planets-card-container">

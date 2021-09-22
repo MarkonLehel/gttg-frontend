@@ -47,6 +47,6 @@ button {
   height: 100px;
   margin: 0 auto;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 50%;
   box-shadow: rgba(114, 112, 112, 0.2) 0px 8px 24px;
 }
