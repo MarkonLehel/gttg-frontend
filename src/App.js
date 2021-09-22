@@ -5,6 +5,7 @@ import Booker from './components/Booker';
 import About from './components/pages/About';
 import { useState } from 'react';
 import {useTransition, animated} from 'react-spring';
+import planet0 from './images/small/3_tatooine_100x100.png';
 
 const App = props=> {
   // const [isVisible, setIsVisible] = useState(false);
@@ -12,7 +13,7 @@ const App = props=> {
   const transition = useTransition(items, {
     from: {x: -100, y: 600, opacity: 0},
     enter: item => (next) => ( // change enter from object to a callback
-      next({x: 0, y: item.y, opacity: 1, delay: item.delay})
+      next({x: 0, y: item.y, opacity: 1, delay: item.delay, backgroundImage: `url(${planet0})`})
     ),
     leave: {x: 100, y: 600, opacity: 0},
 
@@ -45,7 +46,11 @@ const App = props=> {
       }}>{items.length ? 'unmount' : 'mount'}</button>
       <div className="planets-card-container">
         {transition((style, item) =>
-            item ? <animated.div style={style} className="item"></animated.div> : ''
+            item ? <animated.div style={style} className="item">
+              {/* <div className="img"></div> */}
+                 <img src={planet0} alt="planet0" />
+                 {/* <animated.img src={planet0} alt={planet0} style={style} /> */}
+            </animated.div> : ''
         )}
          </div>
       </div>

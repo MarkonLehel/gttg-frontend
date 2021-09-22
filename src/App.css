@@ -46,7 +46,13 @@ button {
   width: 100px;
   height: 100px;
   margin: 0 auto;
-  background-color: white;
+  background-color: black;
+  /* background-image: url(./images/3_tatooine_400x400.png); */
   border-radius: 50%;
   box-shadow: rgba(114, 112, 112, 0.2) 0px 8px 24px;
 }
+
+/* .img {
+  background-image: url(./images/3_tatooine_400x400.png);
+  background-size: 100px;
+} */
