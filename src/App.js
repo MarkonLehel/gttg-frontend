@@ -12,7 +12,7 @@ const App = props=> {
   const transition = useTransition(items, {
     from: {x: -100, y: 800, opacity: 0},
     enter: item => (next) => ( // change enter from object to a callback
-      next({x: 0, y: item.y, opacity: 1})
+      next({x: 0, y: item.y, opacity: 1, delay: item.delay})
     ),
     leave: {x: 100, y: 800, opacity: 0},
 
@@ -38,9 +38,9 @@ const App = props=> {
     <div className="planets-segment">
       <button onClick={() => {
         setItems(v => v.length ? [] : [
-          {y: -100},
-          {y: 0},
-          {y: 100},
+          {y: -100, delay: 200},
+          {y: 0, delay: 200},
+          {y: 100, delay: 200},
         ]);
       }}>{items.length ? 'unmount' : 'mount'}</button>
       <div className="planets-card-container">
