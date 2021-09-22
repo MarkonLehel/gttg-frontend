@@ -6,6 +6,7 @@ import About from './components/pages/About';
 
 const App = props=> {
   return (
+    <>
     <div className="container">
       <Router>
         <Header />
@@ -15,13 +16,23 @@ const App = props=> {
           </Booker>
         </Route>
         <Route path="/top-five">
-          
+
         </Route>
         <Route path="/about">
-          <About/>
+          <About />
         </Route>
       </Router>
     </div>
+    
+    <div className="planets-segment">
+      <button onClick={() => {
+        //
+      }}>mount</button>
+      <div className="planets-card-container">
+        <div className="item"></div>
+         </div>
+      </div>
+    </>
   );
 }
 

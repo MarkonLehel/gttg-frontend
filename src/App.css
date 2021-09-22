@@ -27,11 +27,16 @@ html {
   color: #000;
 }
 
+.planets-segment {
+  text-align: center;
+  padding: 40px;
+}
+
 button {
   padding: 8px;
 }
 
-.card-container {
+.planets-card-container {
   padding: 40px;
   margin-top: 200px;
   min-height: 200px;
