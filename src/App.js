@@ -7,11 +7,12 @@ import { useState } from 'react';
 import {useTransition, animated} from 'react-spring';
 
 const App = props=> {
-  const [isVisible, setIsVisible] = useState(false);
-  const transition = useTransition(isVisible, {
+  // const [isVisible, setIsVisible] = useState(false);
+  const [items, setItems] = useState([]);
+  const transition = useTransition(items, {
     from: {x: -100, y: 800, opacity: 0},
     enter: {x: 0, y: 0, opacity: 1},
-    leave: {},
+    leave: {x: 100, y: 800, opacity: 0},
 
   });
   return (
@@ -34,12 +35,14 @@ const App = props=> {
     </div>
     <div className="planets-segment">
       <button onClick={() => {
-        setIsVisible(v => !v);
-        //
-      }}>{isVisible ? 'unmount' : 'mount'}</button>
+        setItems(v => v.length ? [] : [
+          {},
+          {},
+          {},
+        ]);
+      }}>{items.length ? 'unmount' : 'mount'}</button>
       <div className="planets-card-container">
-        {/* {isVisible ? <div className="item"></div> : ''} */}
-        {transition((style, item) => //callback with 2 arg = check item and animate with style
+        {transition((style, item) =>
             item ? <animated.div style={style} className="item"></animated.div> : ''
         )}
          </div>
