@@ -9,7 +9,10 @@ import {useTransition, animated} from 'react-spring';
 const App = props=> {
   const [isVisible, setIsVisible] = useState(false);
   const transition = useTransition(isVisible, {
-    
+    from: {x: -100, y: 800, opacity: 0},
+    enter: {x: 0, y: 0, opacity: 1},
+    leave: {},
+
   });
   return (
     <>
@@ -29,7 +32,6 @@ const App = props=> {
         </Route>
       </Router>
     </div>
-    
     <div className="planets-segment">
       <button onClick={() => {
         setIsVisible(v => !v);
