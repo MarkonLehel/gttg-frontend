@@ -18,7 +18,7 @@ const App = props=> {
   const [items, setItems] = useState([]);
   const transition = useTransition(items, {
     from: {x: -100, y: 800, opacity: 0},
-    enter: item => (next, index) => ( // change enter from object to a callback
+    enter: item => (next) => ( // change enter from object to a callback
       // next({x: 0, y: item.y, opacity: 1, delay: item.delay, backgroundImage: `url(${planet0})`})
       next({x: 0, y: item.y, opacity: 1, delay: item.delay, key: item.key})
     ),
