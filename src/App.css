@@ -13,14 +13,31 @@
   }
 }
 
+html {
+  color: azure;
+}
+
+body {
+  background: url('./img/background.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: azure;
+}
 
 #header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 6rem;
+  height: 4rem;
   background-color: rgb(183, 208, 255);
-  
+  border-bottom: 1px solid black;
+  box-shadow: #000 2px 1px 2px;
+  padding: 1rem;
 }
 
 #header a {
@@ -32,4 +49,23 @@
   margin-top: 6rem;
 }
 
-#content {}
+#content {
+  padding-top: 2rem;
+}
+
+#planets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.planet {
+  color: #000;
+  background: rgb(183, 208, 255);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: #000 1px 1px 2px;
+}
