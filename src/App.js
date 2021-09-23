@@ -9,6 +9,7 @@ import { PlanetProvider } from './components/PlanetContext';
 import { EventProvider } from './components/EventContext';
 import TripList from './components/TripList';
 import { TripProvider } from './components/TripContext';
+import Footer from './components/layout/Footer';
 
 const App = props=> {
   return (
@@ -34,6 +35,7 @@ const App = props=> {
                   </Route>
                 </div>
               </div>
+              <Footer/>
             </TripProvider>
           </EventProvider>
         </PlanetProvider>
