@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import axios from 'axios';
 import Planet from './Planet';
 import { PlanetContext } from './PlanetContext';
 
