@@ -6,7 +6,7 @@ export const TripProvider = (props) => {
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
-        fetch('https://localhost:5001/api/tripDatas')
+        fetch('https://localhost:44300/api/tripDatas')
         .then(async res => {
             const newTrips = await res.json();
             setTrips( prevTrips =>([ ...prevTrips, ...newTrips]) )})

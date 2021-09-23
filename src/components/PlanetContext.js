@@ -8,7 +8,7 @@ export const PlanetProvider = (props) => {
     // const planets = ["res","res","res","res"];
 
     useEffect(() => {
-        fetch('https://localhost:5001/api/planet')
+        fetch('https://localhost:44300/api/planet')
         .then(async res => {
             const newPlanets = await res.json();
             setPlanets( prevPlanets =>([ ...prevPlanets, ...newPlanets]) )})

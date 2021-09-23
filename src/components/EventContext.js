@@ -6,7 +6,7 @@ export const EventProvider = (props) => {
     const [events, setEvents] = useState([])
 
     useEffect(() => {
-        fetch('https://localhost:5001/api/event')
+        fetch('https://localhost:44300/api/event')
         .then(async res => {
             const newEvents = await res.json();
             setEvents( prevEvents =>([ ...prevEvents, ...newEvents]) )})
