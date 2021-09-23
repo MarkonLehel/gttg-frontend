@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import Planet from './Planet';
+import { PlanetContext } from './PlanetContext';
 
 const PlanetList = props => {
-    // const [planets, setPlanets] = useState({})
-    const planets = ["res","res","res","res"];
-
-    // useEffect(() => {
-    //     axios.get('https://localhost:5001/api/Planet')
-    //         .then(res => setPlanets( res ))
-    // }, [])
+    const [planets, setPlanets] = useContext(PlanetContext)
     
     return (
         <div id="planets">
