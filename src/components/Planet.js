@@ -2,8 +2,8 @@ import React from 'react'
 
 const Planet = props => {
     return (
-        <div>
-            <h1>planet</h1>
+        <div className="planet">
+            <h1>{props.planet.name}</h1>
         </div>
     )
 }

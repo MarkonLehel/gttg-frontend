@@ -8,13 +8,13 @@ const PlanetList = props => {
 
     // useEffect(() => {
     //     axios.get('https://localhost:5001/api/Planet')
-    //         .then(res => setPlanets(  ))
+    //         .then(res => setPlanets( res ))
     // }, [])
     
     return (
         <div id="planets">
             {planets.map(planet => 
-                <Planet />
+                <Planet planet={planet}/>
             )}
         </div>
     )

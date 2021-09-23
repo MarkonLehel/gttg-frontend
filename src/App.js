@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import Booker from './components/Booker';
 import About from './components/pages/About';
 import PlanetList from './components/PlanetList';
+import EventList from './components/EventList';
 
 const App = props=> {
   return (
@@ -15,6 +16,7 @@ const App = props=> {
             <Route exact path="/">
               <PlanetList />
               <Booker />
+              <EventList />
             </Route>
             <Route path="/top-five">
               
