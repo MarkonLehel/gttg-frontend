@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useContext } from 'react';
 import Event from './Event';
+import { EventContext } from './EventContext';
 
 const EventList = props => {
-    // const [events, setEvents] = useState({})
-    const events = ["res","res","res","res"];
-
-    // useEffect(() => {
-    //     axios.get('https://localhost:5001/api/Event')
-    //         .then(res => setEvents( res ))
-    // }, [])
+    const [events, setEvents] = useContext(EventContext)
 
     return (
         <div id="events">

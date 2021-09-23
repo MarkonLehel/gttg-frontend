@@ -18,7 +18,7 @@ export const PlanetProvider = (props) => {
     const topFive = [planets.filter(planet => planet.reputation)]
 
     return(
-        <PlanetContext.Provider value={{planets /*, setPlanets*/, topFive}}>
+        <PlanetContext.Provider value={{planets, setPlanets, topFive}}>
             {props.children}
         </PlanetContext.Provider>
     );
