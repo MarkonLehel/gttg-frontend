@@ -4,11 +4,11 @@ import { PlanetContext } from './PlanetContext';
 
 const PlanetList = props => {
     const {planets, setPlanets} = useContext(PlanetContext)
-    
+
     return (
         <div id="planets">
-            {planets.map(planet => 
-                <Planet planet={planet}/>
+            {planets && planets.map(planet => 
+                <Planet planet={planet} key={planet.planetDataID}/>
             )}
         </div>
     )

@@ -3,7 +3,7 @@ import React from 'react'
 const Planet = props => {
     return (
         <div className="planet">
-            <h1>Planet</h1>
+            <h1>{props.planet.race}</h1>
         </div>
     )
 }

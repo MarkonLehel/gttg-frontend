@@ -1,5 +1,4 @@
 import React, { useEffect, useState, createContext} from 'react';
-import axios from 'axios';
 
 export const PlanetContext = createContext();
 
@@ -9,16 +8,17 @@ export const PlanetProvider = (props) => {
     // const planets = ["res","res","res","res"];
 
     useEffect(() => {
-        axios.get('https://localhost:5001/api/planet')
-            .then(res => {
-                console.log(res)
-                setPlanets( prevPlanets =>({ ...prevPlanets, res}) )})
+        fetch('https://localhost:5001/api/planet')
+        .then(async res => {
+            const newPlanets = await res.json();
+            setPlanets( prevPlanets =>([ ...prevPlanets, ...newPlanets]) )})
+            .catch(err => console.log("fetch", err))
     }, [])
 
-    const topFive = [planets.filter(planet => planet.reputation)]
+    // const topFive = [planets.filter(planet => planet.reputation)]
 
-    return(
-        <PlanetContext.Provider value={{planets, setPlanets, topFive}}>
+    return (
+        <PlanetContext.Provider value={{planets, setPlanets }}>
             {props.children}
         </PlanetContext.Provider>
     );

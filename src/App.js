@@ -7,6 +7,8 @@ import PlanetList from './components/PlanetList';
 import EventList from './components/EventList';
 import { PlanetProvider } from './components/PlanetContext';
 import { EventProvider } from './components/EventContext';
+import TripList from './components/TripList';
+import { TripProvider } from './components/TripContext';
 
 const App = props=> {
   return (
@@ -14,22 +16,25 @@ const App = props=> {
       <Router>
         <PlanetProvider>
           <EventProvider>
-          <Header />
-            <div className="container">
-              <div id="content">
-                <Route exact path="/">
-                  <PlanetList />
-                  <Booker />
-                  <EventList />
-                </Route>
-                <Route path="/top-five">
-                  
-                </Route>
-                <Route path="/about">
-                  <About />
-                </Route>
+            <TripProvider>
+              <Header />
+              <div className="container">
+                <div id="content">
+                  <Route exact path="/">
+                    <PlanetList />
+                    <Booker />
+                    <EventList />
+                    <TripList />
+                  </Route>
+                  <Route path="/top-five">
+                    
+                  </Route>
+                  <Route path="/about">
+                    <About />
+                  </Route>
+                </div>
               </div>
-            </div>
+            </TripProvider>
           </EventProvider>
         </PlanetProvider>
       </Router>

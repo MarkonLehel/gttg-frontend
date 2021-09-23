@@ -4,9 +4,10 @@ import Trip from './Trip';
 
 const TripList = props => {
     const {trips, setTrips} = useContext(TripContext)
+    console.log(trips)
 
     return (
-        <div id="events">
+        <div id="trips">
             {trips.map(trip => 
                 <Trip trip={trip} />
             )}

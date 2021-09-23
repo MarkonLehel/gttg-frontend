@@ -1,5 +1,4 @@
-import React, { useEffect, useState, createContext} from 'react';
-import axios from 'axios';
+import React, { useEffect, useState, createContext } from 'react';
 
 export const TripContext = createContext();
 
@@ -7,10 +6,11 @@ export const TripProvider = (props) => {
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
-        axios.get('https://localhost:5001/api/Trip')
-            .then(res => {
-                console.log(res)
-                setTrips( prevTrips =>({ ...prevTrips, res}) )})
+        fetch('https://localhost:5001/api/tripDatas')
+        .then(async res => {
+            const newTrips = await res.json();
+            setTrips( prevTrips =>([ ...prevTrips, ...newTrips]) )})
+            .catch(err => console.log("fetch", err))
     }, [])
 
     return(
