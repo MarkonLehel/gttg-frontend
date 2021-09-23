@@ -5,27 +5,33 @@ import Booker from './components/Booker';
 import About from './components/pages/About';
 import PlanetList from './components/PlanetList';
 import EventList from './components/EventList';
+import { PlanetProvider } from './components/PlanetContext';
+import { EventProvider } from './components/EventContext';
 
 const App = props=> {
   return (
     <div className="App">
       <Router>
-        <Header />
-        <div className="container">
-          <div id="content">
-            <Route exact path="/">
-              <PlanetList />
-              <Booker />
-              <EventList />
-            </Route>
-            <Route path="/top-five">
-              
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-          </div>
-        </div>
+        <PlanetProvider>
+          <EventProvider>
+          <Header />
+            <div className="container">
+              <div id="content">
+                <Route exact path="/">
+                  <PlanetList />
+                  <Booker />
+                  <EventList />
+                </Route>
+                <Route path="/top-five">
+                  
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
+              </div>
+            </div>
+          </EventProvider>
+        </PlanetProvider>
       </Router>
     </div>
   );
