@@ -10,6 +10,9 @@ const PlanetList = props => {
             {planets && planets.map(planet => 
                 <Planet planet={planet} key={planet.planetDataID}/>
             )}
+            {planets && planets.map(planet => 
+                <Planet planet={planet} key={planet.planetDataID}/>
+            )}
         </div>
     )
 }
