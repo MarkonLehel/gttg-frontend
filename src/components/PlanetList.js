@@ -4,7 +4,7 @@ import Planet from './Planet';
 import { PlanetContext } from './PlanetContext';
 
 const PlanetList = props => {
-    const [planets, setPlanets] = useContext(PlanetContext)
+    const {planets, setPlanets} = useContext(PlanetContext)
     
     return (
         <div id="planets">
