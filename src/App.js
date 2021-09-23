@@ -3,6 +3,7 @@ import  { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Booker from './components/Booker';
 import About from './components/pages/About';
+import PlanetList from './components/PlanetList';
 
 const App = props=> {
   return (
@@ -12,6 +13,7 @@ const App = props=> {
         <div className="container">
           <div id="content">
             <Route exact path="/">
+              <PlanetList />
               <Booker />
             </Route>
             <Route path="/top-five">
