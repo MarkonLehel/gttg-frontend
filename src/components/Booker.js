@@ -2,7 +2,7 @@ import React from 'react'
 
 const Booker = props => {
     return (
-        <div id="booker">
+        <div>
             <input placeholder='Book here'></input>
         </div>
     )
