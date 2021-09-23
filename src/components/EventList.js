@@ -3,7 +3,7 @@ import Event from './Event';
 import { EventContext } from './EventContext';
 
 const EventList = props => {
-    const [events, setEvents] = useContext(EventContext)
+    const {events, setEvents} = useContext(EventContext)
 
     return (
         <div id="events">
