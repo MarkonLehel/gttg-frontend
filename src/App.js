@@ -24,8 +24,8 @@ const App = props=> {
                   <Route exact path="/">
                     <PlanetList />
                     <Booker />
-                    <EventList />
-                    <TripList />
+                    {/* <EventList />
+                    <TripList /> */}
                   </Route>
                   <Route path="/top-five">
                     
