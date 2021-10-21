@@ -12,3 +12,9 @@ test('should render footer division element', () => {
   const divisionElement = result.container.querySelector('#footer');
   expect(divisionElement).toBeInTheDocument();
 });
+
+test('should render 5 planet division element', async () => {
+  const result = render(<App />);
+  const divisionElement = await result.container.querySelector('#planets')
+  expect(divisionElement).toBeInTheDocument();
+});
