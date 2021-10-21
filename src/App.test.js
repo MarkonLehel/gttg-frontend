@@ -7,13 +7,8 @@ test('should render header division element', () => {
   expect(divisionElement).toBeInTheDocument();
 });
 
-
-/*import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
+test('should render header division element and check by role', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const divisionElement = screen.getByRole("heading");
+  expect(divisionElement).toBeInTheDocument();
 });
-*/
