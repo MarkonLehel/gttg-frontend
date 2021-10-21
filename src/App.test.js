@@ -31,8 +31,8 @@ test('should render planets division element', async () => {
 //     expect(divisionElements.length).toBe(5);
 //   });
 
-  test('should render 5 planet division element', async () => {
-    const result = render(<App />);
-    const divisionElements = result.container.getElementsByClassName('planet')
-    expect(divisionElements.getElementsByClassName).toBe('planet');
+  test('should render Endor planet division element', async () => {
+    render(<App />);
+    const divisionElement = await screen.getByTestId("Endor");
+    expect(divisionElement).toBeInTheDocument();
   });
